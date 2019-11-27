@@ -1,0 +1,40 @@
+{
+  "name": "study-express-api",
+  "version": "1.0.0",
+  "description": "study restful api",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawn-thecool/study-express-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "node",
+    "express",
+    "mongoDB"
+  ],
+  "author": "shawn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawn-thecool/study-express-api/issues"
+  },
+  "homepage": "https://github.com/shawn-thecool/study-express-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "prettier": {
+    "printWidth": 150,
+    "semi": false,
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "tabs": true,
+    "[javascript]": {
+      "editor.formatOnSave": true
+    }
+  }
+}
