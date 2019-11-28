@@ -4,6 +4,7 @@
   "description": "study restful api",
   "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,12 @@
   },
   "homepage": "https://github.com/shawn-thecool/study-express-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "uuidv4": "^6.0.0"
   },
   "prettier": {
     "printWidth": 150,
