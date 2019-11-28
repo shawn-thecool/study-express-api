@@ -1,20 +1,40 @@
-const model = require('./model')
+const Album = require('./model')
 
-exports.createAlbum = (req, res) => {
+const createAlbum = (req, res) => {
   res.json({ msg: 'createAlbum' })
 }
-exports.getAllAlbums = (req, res) => {
-  res.json({ msg: 'getAllAlbums' })
+const getAllAlbums = (req, res) => {
+  const album = new Album()
+  console.log(album)
+  album.name = 'shawn'
+  album.save(err => {
+    if (err) {
+      console.error(err)
+      res.json({ result: 0 })
+      return
+    }
+    res.json({ result: 1 })
+  })
+  // res.json({ msg: 'getAllAlbums' })
 }
-exports.getAlbumById = (req, res) => {
+const getAlbumById = (req, res) => {
   res.json({ msg: 'getAlbumById' })
 }
-exports.updateAlbum = (req, res) => {
+const updateAlbum = (req, res) => {
   res.json({ msg: 'updateAlbum' })
 }
-exports.deleteAlbum = (req, res) => {
+const deleteAlbum = (req, res) => {
   res.json({ msg: 'deleteAlbum' })
 }
-exports.deleteAlbums = (req, res) => {
+const deleteAlbums = (req, res) => {
   res.json({ msg: 'deleteAlbums' })
+}
+
+module.exports = {
+  createAlbum,
+  getAllAlbums,
+  getAlbumById,
+  updateAlbum,
+  deleteAlbum,
+  deleteAlbums
 }
