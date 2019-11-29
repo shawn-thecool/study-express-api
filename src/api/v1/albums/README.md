@@ -1,8 +1,6 @@
 # melon top 100 albums
 
-## Request Format
-
-### Album Schema
+## Album Schema
 
 ```text
 {
@@ -14,6 +12,8 @@
   updatedAt: { type: Date, default: null }
 }
 ```
+
+## Request Format
 
 ### getCrawlMelonData
 
