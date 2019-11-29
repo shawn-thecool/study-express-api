@@ -25,7 +25,7 @@ app.use(logger('dev'))
 app.use(cors())
 app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')))
 // router
-app.use('/melon/albums', require('./api/v1/albums'))
+app.use('/api/v1/albums', require('./api/v1/albums'))
 app.use('*', (req, res) => res.json({ msg: 'hello' }))
 // server
 app.listen(port, () => console.log(`\x1b[36m[server] : Started at http://localhost:${port}\u001b[0m`))

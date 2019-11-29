@@ -5,9 +5,9 @@ const AlbumSchema = new Schema({
   name: { type: String, required: true, unique: true },
   song: { type: String, default: null },
   img: { type: String, default: null },
+  hit: { type: Number, default: 0 },
   createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: null },
-  hit: { type: Number, default: 0 }
+  updatedAt: { type: Date, default: null }
 })
 
 AlbumSchema.pre('save', function(next) {

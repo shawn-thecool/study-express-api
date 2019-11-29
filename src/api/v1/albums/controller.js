@@ -2,7 +2,7 @@ const Album = require('./model')
 
 const crawl = (req, res) => {}
 
-const getAllAlbums = (req, res) => {
+const getAlbums = (req, res) => {
   Album.findAll()
     .then(albums => res.status(200).json(albums))
     .catch(error => res.status(500).json(error))
@@ -46,7 +46,7 @@ const deleteAlbums = (req, res) => {
 
 module.exports = {
   crawl,
-  getAllAlbums,
+  getAlbums,
   getAlbumByName,
   createAlbum,
   updateAlbum,

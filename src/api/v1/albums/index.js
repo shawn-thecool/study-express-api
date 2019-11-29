@@ -3,7 +3,7 @@ const router = express.Router()
 const controller = require('./controller')
 
 router.get('/reset', controller.crawl)
-router.get('/', controller.getAllAlbums)
+router.get('/', controller.getAlbums)
 router.get('/:name', controller.getAlbumByName)
 router.post('/', controller.createAlbum)
 router.put('/:name', controller.updateAlbum)
