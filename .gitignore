@@ -3,8 +3,6 @@ package-lock.json
 yarn-lock.json
 yarn.lock
 .DS_Store
-# env.json
-/.env.json
 
 # local env files
 .env.local
