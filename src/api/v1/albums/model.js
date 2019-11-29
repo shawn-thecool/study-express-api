@@ -19,16 +19,16 @@ AlbumSchema.post('save', function(result) {
   console.log('post-save', result)
 })
 
-AlbumSchema.statics.createOne = function(payload) {
-  return this.create(payload)
-}
-
 AlbumSchema.statics.findAll = function() {
   return this.find({})
 }
 
 AlbumSchema.statics.findOneByName = function(name) {
   return this.find({ name })
+}
+
+AlbumSchema.statics.createOne = function(payload) {
+  return this.create(payload)
 }
 
 AlbumSchema.statics.updateOneByName = function(name, payload) {
