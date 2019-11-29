@@ -1,4 +1,4 @@
-const { port, dbUrl } = require('./env.json')
+const { port, dbUrl } = require('./../.env.json')
 const express = require('express')
 const app = express()
 const logger = require('morgan')
