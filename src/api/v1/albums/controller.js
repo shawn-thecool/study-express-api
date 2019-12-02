@@ -1,6 +1,23 @@
 const Album = require('./model')
+const { crawlMelonNewIndex } = require('./../../../crawl/melon')
 
-const crawl = (req, res) => {}
+const crawl = (req, res) => {
+  crawlMelonNewIndex()
+    .then(data => {
+      data.map(album => {
+        Album.createOne(album)
+          .then(album => console.log('create album successfuly -', album.name))
+          .catch(error => {
+            console.log('create album fail with -', error)
+            Album.findOneByName(album.name, album)
+              .then(albums => console.log('update album successfuly -', album.name))
+              .catch(error => console.log('update album fail with -', error))
+          })
+      })
+      return data
+    })
+    .then(data => res.json(data))
+}
 
 const getAlbums = (req, res) => {
   Album.findAll()
@@ -38,8 +55,14 @@ const deleteAlbum = (req, res) => {
     .catch(error => res.status(500).json(error))
 }
 
-const deleteAlbums = (req, res) => {
+const deleteAlbumsByName = (req, res) => {
   Album.deleteManyByNames(req.body)
+    .then(albums => res.status(200).json(albums))
+    .catch(error => res.status(500).json(error))
+}
+
+const deleteAllAlbums = (req, res) => {
+  Album.deleteAll()
     .then(albums => res.status(200).json(albums))
     .catch(error => res.status(500).json(error))
 }
@@ -52,5 +75,6 @@ module.exports = {
   updateAlbum,
   updateAlbumHit,
   deleteAlbum,
-  deleteAlbums
+  deleteAlbumsByName,
+  deleteAllAlbums
 }

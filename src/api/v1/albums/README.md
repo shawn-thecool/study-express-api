@@ -149,7 +149,7 @@
 ### deleteAlbum
 
 - method : DELETE
-- url : http://172.28.31.239:3000/api/v1/albums/${name}
+- url : http://172.28.31.239:3000/api/v1/albums/one/${name}
 - response :
 
 ```text
@@ -173,10 +173,10 @@
 }
 ```
 
-### deleteAlbums
+### deleteAlbumsByName
 
 - method : DELETE
-- url : http://172.28.31.239:3000/api/v1/albums
+- url : http://172.28.31.239:3000/api/v1/albums/many
 - request-body :
 
 ```text
@@ -208,5 +208,33 @@
         }
     },
     "deletedCount": 2
+}
+```
+
+### deleteAllAlbums
+
+- method : DELETE
+- url : http://172.28.31.239:3000/api/v1/albums/all
+
+- response :
+
+```text
+{
+    "n": 50,
+    "opTime": {
+        "ts": "6765653490791350322",
+        "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6765653490791350322",
+    "$clusterTime": {
+        "clusterTime": "6765653490791350322",
+        "signature": {
+            "hash": "HBQxp33HzWnF2kP403e9BJ5GAzY=",
+            "keyId": "6763286757652824066"
+        }
+    },
+    "deletedCount": 50
 }
 ```

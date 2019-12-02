@@ -6,6 +6,8 @@ const AlbumSchema = new Schema({
   song: { type: String, default: null },
   img: { type: String, default: null },
   hit: { type: Number, default: 0 },
+  rank: { type: Number, default: 0 },
+  youtube: { type: String, default: null },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: null }
 })
@@ -45,6 +47,10 @@ AlbumSchema.statics.deleteOneByName = function(name) {
 
 AlbumSchema.statics.deleteManyByNames = function(payload) {
   return this.deleteMany({ name: { $in: payload.names } })
+}
+
+AlbumSchema.statics.deleteAll = function() {
+  return this.deleteMany({})
 }
 
 module.exports = mongoose.model('Album', AlbumSchema)

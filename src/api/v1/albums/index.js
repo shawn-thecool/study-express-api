@@ -8,7 +8,8 @@ router.get('/:name', controller.getAlbumByName)
 router.post('/', controller.createAlbum)
 router.put('/:name', controller.updateAlbum)
 router.patch('/:name/hit', controller.updateAlbumHit)
-router.delete('/:name', controller.deleteAlbum)
-router.delete('/', controller.deleteAlbums)
+router.delete('/one/:name', controller.deleteAlbum)
+router.delete('/many', controller.deleteAlbumsByName)
+router.delete('/all', controller.deleteAllAlbums)
 
 module.exports = router
