@@ -2,6 +2,9 @@ const express = require('express')
 const router = express.Router()
 const controller = require('./controller')
 
+router.get('/test', (req, res)=>{
+  res.status(500).json({msg:'error'})
+})
 router.get('/reset', controller.crawl)
 router.get('/', controller.getAlbums)
 router.get('/:name', controller.getAlbumByName)
