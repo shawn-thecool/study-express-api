@@ -8,9 +8,9 @@ const favicon = require('serve-favicon')
 const mongoose = require('mongoose')
 const db = mongoose.connection
 // db
-db.on('error', () => console.log('\u001b[31m[mongoDB] : Error\u001b[0m'))
-db.once('open', () => console.log('\u001b[33m[mongoDB] : Connected\u001b[0m'))
-db.on('disconnected', () => console.log('\u001b[31m[mongoDB] : Disconnected\u001b[0m'))
+db.on('error', () => console.log('\u001b[31m%s\u001b[0m', '[mongoDB] : Error'))
+db.once('open', () => console.log('\u001b[33m%s\u001b[0m', '[mongoDB] : Connected'))
+db.on('disconnected', () => console.log('\u001b[31m%s\u001b[0m', '[mongoDB] : Disconnected'))
 // mongoose
 mongoose.set('useNewUrlParser', true)
 mongoose.set('useFindAndModify', false)
@@ -26,6 +26,7 @@ app.use(cors())
 app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')))
 // router
 app.use('/api/v1/albums', require('./api/v1/albums'))
+app.use('/api/v1/members', require('./api/v1/members'))
 app.use('*', (req, res) => res.json({ msg: 'hello' }))
 // server
-app.listen(port, () => console.log(`\x1b[36m[server] : Started at http://localhost:${port}\u001b[0m`))
+app.listen(port, () => console.log('\x1b[36m%s\u001b[0m', `[server] : Started at http://localhost:${port}`))
