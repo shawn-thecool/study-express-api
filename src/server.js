@@ -27,6 +27,7 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')))
 // router
 app.use('/api/v1/albums', require('./api/v1/albums'))
 app.use('/api/v1/members', require('./api/v1/members'))
+app.use('/api/v1/books', require('./api/v1/books'))
 app.use('*', (req, res) => res.json({ msg: 'hello' }))
 // server
 app.listen(port, () => console.log('\x1b[36m%s\u001b[0m', `[server] : Started at http://localhost:${port}`))
